@@ -39,5 +39,18 @@ namespace FilesInCore.Controllers
             }
             return View("Index", model);
         }
+
+        public IActionResult Download() 
+        {
+            var filePath = "C:\\Users\\PAS\\source\\repos\\FilesInCore\\FilesInCore\\wwwroot\\Files\\bihar.jpg";
+            var contentType = "image/jpg";
+            
+            var fileStream = new FileStream(filePath, FileMode.Open);
+
+            return new FileStreamResult(fileStream, contentType)
+            {
+                FileDownloadName = "tyautyau.jpg"
+            };
+        }
     }
 }
