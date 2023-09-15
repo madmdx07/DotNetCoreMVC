@@ -19,6 +19,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=File}/{action=Index}/{id?}");
+    pattern: "{controller=SingleFile}/{action=Index}/{id?}");
 
 app.Run();
